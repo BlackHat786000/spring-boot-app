@@ -15,5 +15,6 @@ spec:
       containers:
       - name: spring-boot-container
         image: blackhat786/spring-boot-app:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
