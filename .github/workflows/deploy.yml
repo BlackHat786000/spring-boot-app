@@ -48,7 +48,7 @@ jobs:
 
     - name: Update Kubeconfig
       run: |
-        aws eks update-kubeconfig --name udit_yadav --region ap-south-1
+        aws eks update-kubeconfig --name udityadav --region ap-south-1
 
     - name: Deploy to EKS
       uses: azure/k8s-deploy@v4
