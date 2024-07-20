@@ -50,10 +50,9 @@ jobs:
       run: |
         aws eks update-kubeconfig --name udityadav --region ap-south-1
 
-    - name: Update Deployment Annotation
+    - name: Delete existing Pods
       run: |
-        kubectl patch deployment spring-boot-deployment -p \
-          '{"spec":{"template":{"metadata":{"annotations":{"deployment.kubernetes.io/revision":"'"$(date +%s)"'"}}}}}'
+        kubectl delete pods -l app=spring-boot-app
 
     - name: Deploy to EKS
       uses: azure/k8s-deploy@v4
